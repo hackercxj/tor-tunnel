@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+    tor-tunnel:
+        image: whatisl/tor-tunnel:3.5
+        container_name: tor-tunnel
+        ports:
+            - "29000:29000"
+        environment:
+            PROXY: "192.168.101.147:1086"
+            TorInstanceNum: 100
+        restart: on-failure

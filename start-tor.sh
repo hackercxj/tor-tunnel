@@ -22,6 +22,7 @@ EOF
   chmod -R 700 /var/lib/tor/instance-$i
   # 以后台模式启动 Tor 进程
   gosu toruser tor -f /etc/tor/torrc-$i &
+  sleep 5
 done
 
 # Start OpenResty
